@@ -1,0 +1,169 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:regular,700);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  color: #fff;
+  background-color: #000;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  background-image: url('../images/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 100vh;
+  font-size: 100px;
+  text-align: center;
+  position: relative;
+}
+.game {
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0px 0px 0px;
+  gap: 20px;
+  border-radius: 20px;
+  padding: 20px 0;
+  background-color: #d1caca1f;
+}
+.game h2 {
+  font-size: 50px;
+  padding: 50px 0;
+}
+.game-table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0px 0px 0px 0px;
+  position: relative;
+  padding: 40px;
+}
+
+.game__button,
+.restart-btn {
+  color: #000;
+  width: 200px;
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.notflipped {
+  height: 250px;
+  width: 170px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.flipped {
+  height: 250px;
+  width: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 40%;
+  padding-right: 15px;
+  transform: rotateY(180deg);
+  font-family: serif;
+}
+
+.game-card i {
+  display: none;
+}
+
+.game-card i + i {
+  display: block;
+}
+
+.game-card.flip {
+  background: #fff;
+  color: red;
+  transform: perspective(200px) rotateY(180deg);
+  transition: transform 0.6s ease;
+  border-radius: 10px;
+}
+.game-card.flip::before {
+  content: '❤️';
+  font-size: 30px;
+  top: 15px;
+  right: 15px;
+  position: absolute;
+}
+.game-card.flip::after {
+  content: '❤️';
+  font-size: 30px;
+  bottom: 15px;
+  left: 15px;
+  position: absolute;
+}
+
+@media (max-width: 375px) {
+	h1{
+		font-size: 40px;
+		padding: 20px 0px 0px 0px;
+	}
+  .notflipped,
+  .flipped {
+    height: 90px;
+    width: 60px;
+    font-size: 50px;
+    padding-top: 30%;
+    padding-right: 0px;
+  }
+  .game-card.flip::before,
+  .game-card.flip::after {
+    font-size: 10px;
+  }
+  .game-card.flip::before {
+    top: 5px;
+    right: 5px;
+  }
+	.game-card.flip::after {
+    bottom: 5px;
+  left: 5px;
+  }
+}
+
+.game-card.flip i {
+  display: block;
+}
+.game-card.flip i + i {
+  display: none;
+}
+.success {
+  background-color: lightgreen !important;
+}
+.congrats-block {
+  position: absolute;
+  font-size: 180px;
+  background-color: #969696d8;
+  padding: 40px;
+  border-radius: 20px;
+  margin: auto 40px;
+  display: none;
+  z-index: 1;
+}
+.congrats-block p {
+  font-size: 40px;
+  padding: 20px 0px 0px 0px;
+}
